@@ -4,7 +4,7 @@ A CLI tool similute to SSI transactions on Hypersign Prajna Testnet
 
 ## Usage
 
-1. Clone this repository and install the binary
+1. Clone this repository and install the binary (Binary name: `hypersign-load-test`)
 
 ```
 $ git clone github.com/hypersign-protocol/hypersign-load-test
