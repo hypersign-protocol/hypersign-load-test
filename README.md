@@ -1,6 +1,6 @@
 # Hypersign Load Test
 
-A CLI tool similute to SSI transactions on Hypersign Prajna Testnet
+A CLI tool to similute SSI transactions on Hypersign Prajna Testnet
 
 ## Usage
 
