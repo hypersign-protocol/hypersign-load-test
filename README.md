@@ -9,7 +9,7 @@ A CLI tool to similute SSI transactions on Hypersign Prajna Testnet
 1. Clone this repository and install the binary (Binary name: `hypersign-load-test`)
 
 ```
-$ git clone github.com/hypersign-protocol/hypersign-load-test
+$ git clone https://github.com/hypersign-protocol/hypersign-load-test
 $ cd hypersign-load-test
 $ make install
 ```
