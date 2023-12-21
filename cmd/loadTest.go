@@ -2,6 +2,8 @@ package cmd
 
 import (
 	"context"
+	"os"
+
 	log "github.com/sirupsen/logrus"
 
 	localclient "github.com/hypersign-protocol/hypersign-load-test/client"
@@ -45,6 +47,7 @@ func executeTransactions(
 	// Submit a Tx to register this DID Document
 	if err := localclient.PerformRegisterDIDTx(ctx, *client, *account, msgRegisterDID); err != nil {
 		logger.Errorln(err)
+		os.Exit(1)
 	}
 	logger.Printf("DID Document %v has been registered successfully\n", didID)
 
@@ -61,6 +64,7 @@ func executeTransactions(
 
 		if err := localclient.PerformRegisterCredentialStatusTx(ctx, *client, *account, msgRegisterCredentialStatus); err != nil {
 			logger.Errorf("Iteration %v has failed | Error: %v\n",  iteration, err)
+			os.Exit(1)		
 		}
 		
 		logger.Infof("Iteration %v successful | Credential Status %v is registered successfully\n", iteration, msgRegisterCredentialStatus.CredentialStatusDocument.Id)
