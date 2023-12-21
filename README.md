@@ -42,3 +42,9 @@ hypersign-load-test list-accounts
 ```
 hypersign-load-test start --account <name-of-the-account>
 ```
+
+If the Node you want to connect is running on a different IP and Port, use the `--node` flag:
+
+```
+hypersign-load-test start --account <name-of-the-account> --node <RPC address>
+```

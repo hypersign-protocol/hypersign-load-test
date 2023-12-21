@@ -7,7 +7,7 @@ import (
 	"github.com/ignite/cli/ignite/pkg/cosmosclient"
 )
 
-func CreateClient(ctx context.Context, home string) *cosmosclient.Client {
+func CreateClient(ctx context.Context, home string, nodeURL string) *cosmosclient.Client {
 	addressPrefix := "hid"
 
 	client, err := cosmosclient.New(
@@ -16,6 +16,7 @@ func CreateClient(ctx context.Context, home string) *cosmosclient.Client {
 		cosmosclient.WithHome(home),
 		cosmosclient.WithGas("400000"),
 		cosmosclient.WithFees("50uhid"),
+		cosmosclient.WithNodeAddress(nodeURL),
 	)
 	if err != nil {
 		panic(fmt.Sprintf("failed to create client: %v", err.Error()))

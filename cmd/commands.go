@@ -133,6 +133,11 @@ func loadTestCommand() *cobra.Command {
 				return err
 			}
 
+			nodeURL, err := cmd.Flags().GetString("node")
+			if err != nil {
+				return err
+			}
+
 			registry, err := client.GetDefaultRegistry(homeDir)
 			if err != nil {
 				return err
@@ -144,7 +149,7 @@ func loadTestCommand() *cobra.Command {
 			}
 
 			cmdContext := cmd.Context()
-			cosmosClient := client.CreateClient(cmdContext, homeDir)
+			cosmosClient := client.CreateClient(cmdContext, homeDir, nodeURL)
 
 			if err := executeTransactions(cmdContext, cosmosClient, &account, credStatusIter); err != nil {
 				return nil
@@ -156,6 +161,7 @@ func loadTestCommand() *cobra.Command {
 	cmd.Flags().String("home", defaultHome, "home directory")
 	cmd.Flags().String("account", "", "account name (not address) to send transaction from")
 	cmd.Flags().Uint64("cred-status-iter", 50000, "number of RegisterCredentialStatus transactions to execute")
+	cmd.Flags().String("node", "http://localhost:26657", "Node RPC Interface")
 
 	return cmd
 }
