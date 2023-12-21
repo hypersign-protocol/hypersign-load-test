@@ -4,6 +4,8 @@ A CLI tool to similute SSI transactions on Hypersign Prajna Testnet
 
 ## Usage
 
+### Setup
+
 1. Clone this repository and install the binary (Binary name: `hypersign-load-test`)
 
 ```
@@ -32,6 +34,8 @@ Fund atleast `2.6 HID` (or `260000uhid`) to this newly created account.
 ```
 hypersign-load-test list-accounts
 ```
+
+### Initiating the Load test
 
 4. Start the Load test (Make sure the account that you just created is funded)
 
